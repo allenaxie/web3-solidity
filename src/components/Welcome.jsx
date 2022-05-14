@@ -7,12 +7,8 @@ import { TransactionContext } from '../context/TransactionContext';
 import { Loader } from './';
 
 const Welcome = () => {
-    const { value } = useContext(TransactionContext);
-    console.log(value);
-
-    const connectWallet = () => {
-
-    };
+    const { connectWallet } = useContext(TransactionContext);
+    console.log(connectWallet);
 
     const handleSubmit = () => {
 
