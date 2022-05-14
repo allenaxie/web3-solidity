@@ -25,7 +25,7 @@ export const TransactionProvider = ({ children }) => {
 
     const handleChange = (e, name) => {
         // prevState from react
-        setFormData((prevState) => ({...prevState, [name]: e.target.value}));
+        setFormData((prevState) => ({ ...prevState, [name]: e.target.value }));
     }
 
     const checkIfWalletIsConnected = async () => {
@@ -72,7 +72,9 @@ export const TransactionProvider = ({ children }) => {
         try {
             if (!ethereum) return alert("Please install metamask");
 
-
+            const { addressTo, amount, keyword, message } = formData;
+            getEthereumContract();
+            
         } catch (error) {
             console.log(error);
         }
@@ -84,7 +86,14 @@ export const TransactionProvider = ({ children }) => {
 
     return (
         // wrap entire application with data passed to transactionContext
-        <TransactionContext.Provider value={{ connectWallet, currentAccount, formData, setFormData, handleChange }}>
+        <TransactionContext.Provider value={{ 
+            connectWallet, 
+            currentAccount, 
+            formData, 
+            handleChange, 
+            sendTransaction 
+            }}
+        >
             {children}
         </TransactionContext.Provider>
     )
