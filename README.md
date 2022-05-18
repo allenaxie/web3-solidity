@@ -10,7 +10,9 @@ My first exposure to smart contracts. This application allows you to connect to 
 
 ## 📸 Screenshots 
 
-
+| | | |
+|:-------------------------:|:-------------------------:|:-------------------------:|
+|<img src="images/screenshot.png" width=400px height=180px overflow="hidden">
 
 ## 💻 Technologies Used 
 
